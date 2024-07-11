@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { signInStart, signInFailure, signInSuccess } from '../redux/user/userSlice';
-import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate, Link } from 'react-router-dom';
 
 const SignIn = () => {
 
   const [formData, setFormData] = useState({});
+  const { loading, error } = useSelector(state => state.user)
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -55,7 +56,13 @@ const SignIn = () => {
           <label htmlFor="password">Password</label>
           <input onChange={(e) => handleChange(e)} type="password" id="password" placeholder='enter your password'/>
         </div>
-        <button className='submit-btn'>Sign in</button>
+        {error &&  <span className="error">{error}</span>}
+        <button disabled={loading} className='submit-btn'>{loading ? 'Loading...' : 'Sign in'}</button>
+        <p className='sign-up-para'>Don't have an account? 
+          <Link to={'/sign-up'}>
+            <span className='sign-up-text'>Sign up</span>
+          </Link>
+        </p>
       </form>
     </div>
   )
