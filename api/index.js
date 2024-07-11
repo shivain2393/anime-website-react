@@ -1,9 +1,11 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
-import authRouter from './routes/auth.route.js'
-import errorMiddleware from './middlewares/error.middleware.js';
 import cookieParser from 'cookie-parser';
+import errorMiddleware from './middlewares/error.middleware.js';
+import authRouter from './routes/auth.route.js'
+import animeRouter from './routes/anime.route.js'
+
 
 dotenv.config();
 
@@ -31,6 +33,8 @@ app.use(express.urlencoded({
 app.use(cookieParser())
 
 app.use('/api/auth', authRouter);
+app.use('/api/anime', animeRouter);
+
 
 app.use(errorMiddleware);
 

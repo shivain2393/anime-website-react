@@ -68,7 +68,7 @@ const signIn = async (req, res, next) => {
             }
         , process.env.JWT_SECRET)
 
-        res.cookie('access-token', token, {
+        res.cookie('access_token', token, {
             httpOnly: true,
             secure: true
         })
