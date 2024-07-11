@@ -39,7 +39,7 @@ const Header = () => {
       </Link>
       <ul className='nav-links'>
         <li><Link to={'/'}>Home</Link></li>
-        <li><Link>Animes</Link></li>
+        <li><Link to={'/animes'}>Animes</Link></li>
         <li><Link>Mangas</Link></li>
       </ul>
 

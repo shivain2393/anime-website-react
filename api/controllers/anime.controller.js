@@ -17,8 +17,12 @@ const addAnime = async (req, res, next) => {
 
 const showAllAnimes = async (req, res, next) => {
     
-    const allAnimes = await Anime.find({})
-    return res.status(200).json(allAnimes)
+    try {
+        const allAnimes = await Anime.find({});
+        return res.status(200).json(allAnimes)
+    } catch (error) {
+        next(error)
+    }
 }
 
 export { addAnime, showAllAnimes }
