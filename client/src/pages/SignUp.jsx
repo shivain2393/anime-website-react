@@ -88,7 +88,7 @@ const SignUp = () => {
           <input onChange={(e) => handleChange(e)} minLength={8} maxLength={64} placeholder='confirm your password' type="password" id="confirmPassword" required/>
         </div>
         {error && <p className='error'>{error}</p>}
-        <button disabled={loading} className='submit-btn'>{loading ? 'Loading...' : 'Submit'}</button>
+        <button disabled={loading} className='submit-btn'>{loading ? 'Loading...' : 'Sign up'}</button>
       </form>
     </div>
   )

@@ -21,6 +21,7 @@ button:disabled{
     opacity: 0.4;
 }
 
+/* Navbar */
 
 .navbar{
     display: flex;
@@ -51,7 +52,7 @@ button:disabled{
 
 .user-controls{
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
     font-size: 1.3rem;
     align-items: center;
 }
@@ -61,6 +62,14 @@ button:disabled{
     font-size: 1.3rem;
     cursor: pointer;
 }
+
+.profile-picture{
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Sign Up Page */
 
 .sign-up-box{
     width: 25%;
@@ -96,4 +105,21 @@ button:disabled{
     align-self: center;
     border-radius: 0.5rem;
     cursor: pointer;
+}
+
+
+/* Sign In Page */
+
+.sign-in-box{
+    width: 25%;
+    margin: 5rem auto;
+    font-size: 1.3rem;
+    border: 2px solid black;
+    padding: 2.5rem;
+}
+
+.sign-in-form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
