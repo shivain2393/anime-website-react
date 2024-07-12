@@ -10,6 +10,7 @@ import AllAnimes from './pages/AllAnimes'
 import PrivateRoute from './components/PrivateRoute'
 import AdminRoute from './components/AdminRoute'
 import AddAnime from './pages/AddAnime'
+import AnimeDetails from './pages/AnimeDetails'
 import './App.css'
 
 
@@ -22,6 +23,7 @@ const App = () => {
           <Route path='sign-in' element={<SignIn />} />
           <Route path='sign-up' element={<SignUp />} />
           <Route path='/animes' element={<AllAnimes />} />
+          <Route path='/anime/:id' element={<AnimeDetails />} />
           <Route element={<PrivateRoute />}>
             <Route path='/profile' element={<Profile />} />
             <Route element={<AdminRoute />}>
