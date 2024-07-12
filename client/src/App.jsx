@@ -28,14 +28,14 @@ const App = () => {
 
         const res = await fetch('/api/anime/showallanimes')
         if(!res){
-            dispatch(getAnimesFailure(dispatch("Bad Internet Connection")))
+            dispatch(getAnimesFailure("Bad Internet Connection"))
             return;
         }
         const data = await res.json()
         dispatch(getAnimesSucess(data));
-        
+
     } catch (error) {
-        dispatch(getAnimesFailure(dispatch("Bad Internet Connection")))
+        dispatch(getAnimesFailure("Bad Internet Connection"))
     }
 
   } 
