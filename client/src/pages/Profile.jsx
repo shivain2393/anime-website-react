@@ -23,7 +23,7 @@ const Profile = () => {
       </div>
       
       <div className="personal-anime-info">
-          <WatchList user={currentUser}/>
+          <WatchList watchList={currentUser.watchList}/>
       </div>
     </div>
   )
