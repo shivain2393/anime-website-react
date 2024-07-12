@@ -2,12 +2,6 @@ import { Anime } from '../models/anime.model.js'
 import { User } from '../models/user.model.js';
 import { ApiError } from '../utils/ApiError.js';
 
-const getWatchList = async (req, res, next) => {
-
-
-
-}
-
 const addToWatchList = async (req, res, next) => {
     
     try {
@@ -20,14 +14,14 @@ const addToWatchList = async (req, res, next) => {
         const isInWatchList = user.watchList.some(anime => anime._id.equals(animeId));
 
         if(isInWatchList){
-            return res.status(200).json("Already in WatchList");
+            return;
         }
 
         const anime = await Anime.findById(animeId);
 
         if(!anime) throw new ApiError(401, "Anime not found")
 
-        user.watchList.push(anime);
+        user.watchList.push(anime._id);
 
         await user.save()
 
@@ -60,4 +54,4 @@ const removeFromWatchList = async (req, res, next) => {
 
 }
 
-export { getWatchList, addToWatchList, removeFromWatchList }
+export { addToWatchList, removeFromWatchList }

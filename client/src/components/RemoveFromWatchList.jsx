@@ -1,22 +1,23 @@
 import React from 'react'
-import { updateWatchListStart, updateWatchListSuccess, updateWatchListFailure } from '../redux/user/userSlice.js'
-import { useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux';
+import { updateWatchListStart, updateWatchListSuccess, updateWatchListFailure } from '../redux/user/userSlice';
 
-const AddToWatchList = ({ animeId }) => {
+
+const RemoveFromWatchList = ({ animeId }) => {
 
     const dispatch = useDispatch();
 
-    const addToWatchList = async () =>{
+    const removeFromWatchList = async () => {
         try{
 
             dispatch(updateWatchListStart());
 
-            const res = await fetch('/api/watchlist/addtowatchlist', {
+            const res = await fetch('/api/watchlist/removefromwatchlist', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ animeId : animeId })
+                body: JSON.stringify({animeId : animeId})
             })
 
             const data  = await res.json();
@@ -35,14 +36,12 @@ const AddToWatchList = ({ animeId }) => {
     }
 
     return (
-        <div onClick={addToWatchList} className='add-icon'>
-
+        <div onClick={removeFromWatchList} className='add-icon'>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width={30}>
-            <path fillRule="evenodd" d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z" clipRule="evenodd" />
-            </svg>
-        
+            <path fillRule="evenodd" d="M4.25 12a.75.75 0 0 1 .75-.75h14a.75.75 0 0 1 0 1.5H5a.75.75 0 0 1-.75-.75Z" clipRule="evenodd" />
+            </svg>   
         </div>
-  )
+    )
 }
 
-export default AddToWatchList
+export default RemoveFromWatchList

@@ -44,7 +44,7 @@ const userSlice = createSlice({
             state.loading = true;
         },
 
-        updateWatchListSucess: (state, action) => {
+        updateWatchListSuccess: (state, action) => {
             state.currentUser = action.payload;
             state.error = null;
             state.loading = false;
@@ -62,7 +62,7 @@ const userSlice = createSlice({
 export const {
     signInStart, signInSuccess, signInFailure,
     signOutStart, signOutSuccess, signOutFailure,
-    updateWatchListStart, updateWatchListSucess, updateWatchListFailure
+    updateWatchListStart, updateWatchListSuccess, updateWatchListFailure
 } = userSlice.actions;
 
 export default userSlice.reducer;
