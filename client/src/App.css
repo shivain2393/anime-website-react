@@ -167,6 +167,33 @@ button:disabled{
     border-radius: 50%;
 }
 
+/* WatchList section on profile page */
+
+.watch-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.watch-list h1{
+    font-size: 3rem;
+}
+
+.watch-list-animes-container{
+    width: 100%;
+    margin: 3rem auto;
+    display: flex;
+    border: 2px solid black;
+    overflow: hidden;
+    min-height: 100vh;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 1rem;
+    border-radius: 1rem;
+    gap: 0.8rem;
+}
+
 /* All Animes Page */
 
 .animes-page-h1{
@@ -188,6 +215,8 @@ button:disabled{
     border-radius: 1rem;
     gap: 0.8rem;
 }
+
+
 
 
 /* Anime Card */
@@ -367,6 +396,8 @@ button:disabled{
 .add-icon:hover svg{
     fill: white;
 }
+
+
 
 
 
