@@ -7,7 +7,9 @@ const RemoveFromWatchList = ({ animeId }) => {
 
     const dispatch = useDispatch();
 
-    const removeFromWatchList = async () => {
+    const removeFromWatchList = async (event) => {
+        event.preventDefault();
+
         try{
 
             dispatch(updateWatchListStart());

@@ -10,10 +10,9 @@ const AnimeCard = ({ anime }) => {
     const { currentUser } = useSelector(state => state.user);
 
     const watchList = currentUser?.watchList;
-    console.log(watchList)
 
     return (
-        <Link  state={{ anime }} className='anime-card'>
+        <Link to={`/animes/${anime._id}`} state={{ anime }} className='anime-card'>
             <div className="overlay"></div>
             <img src={anime.coverImage} alt="anime-cover" />
             <div className="anime-card-content">

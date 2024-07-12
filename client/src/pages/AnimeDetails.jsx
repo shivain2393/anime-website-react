@@ -5,7 +5,6 @@ const AnimeDetails = () => {
 
     const location = useLocation();
     const { anime } = location.state;
-    console.log(anime)
 
     const formattedDate = new Date(anime.releaseDate).toLocaleDateString('en-US', {
         year: 'numeric',

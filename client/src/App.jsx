@@ -56,7 +56,7 @@ const App = () => {
           <Route path='sign-in' element={<SignIn />} />
           <Route path='sign-up' element={<SignUp />} />
           <Route path='/animes' element={<AllAnimes />} />
-          <Route path='/anime/:id' element={<AnimeDetails />} />
+          <Route path='/animes/:id' element={<AnimeDetails />} />
           <Route element={<PrivateRoute />}>
             <Route path='/profile' element={<Profile />} />
             <Route element={<AdminRoute />}>

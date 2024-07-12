@@ -6,7 +6,9 @@ const AddToWatchList = ({ animeId }) => {
 
     const dispatch = useDispatch();
 
-    const addToWatchList = async () =>{
+    const addToWatchList = async (event) =>{
+        event.preventDefault();
+
         try{
 
             dispatch(updateWatchListStart());
