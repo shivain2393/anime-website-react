@@ -1,31 +1,10 @@
-import React, { useState, useEffect }from 'react'
+import React from 'react'
 import AnimeCard from '../components/AnimeCard';
+import { useSelector } from 'react-redux';
 
 const AllAnimes = () => {
   
-    const [animes, setAnimes] = useState([]);
-    const [error, setError] = useState(null)
-
-    const getAllAnimes = async () => {
-        try {
-            const res = await fetch('/api/anime/showallanimes')
-            if(!res){
-                setError("Bad Internet Connection");
-                return;
-            }
-            const data = await res.json()
-            setAnimes(data);
-        } catch (error) {
-            setError("Bad Internet Connection")
-        }
-
-    }
-
-    useEffect(() => {
-
-        getAllAnimes();
-
-    }, [])
+    const { animes, error } = useSelector(state => state.anime)
 
     return (
         <>  <h1 className='animes-page-h1'>Animes</h1>

@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { getAnimesStart, getAnimesSucess, getAnimesFailure } from './redux/user/animeSlice'
 import Home from './pages/Home'
 import SignIn from './pages/SignIn'
 import SignUp from './pages/SignUp'
@@ -14,7 +16,38 @@ import AnimeDetails from './pages/AnimeDetails'
 import './App.css'
 
 
+
 const App = () => {
+
+  const dispatch = useDispatch();
+
+  const getAllAnimes = async () => {
+    try {
+
+        dispatch(getAnimesStart());
+
+        const res = await fetch('/api/anime/showallanimes')
+        if(!res){
+            dispatch(getAnimesFailure(dispatch("Bad Internet Connection")))
+            return;
+        }
+        const data = await res.json()
+        dispatch(getAnimesSucess(data));
+        
+    } catch (error) {
+        dispatch(getAnimesFailure(dispatch("Bad Internet Connection")))
+    }
+
+  } 
+
+  useEffect(() => {
+
+    getAllAnimes();
+
+}, [])
+
+
+
   return (
     <BrowserRouter>
       <Header />

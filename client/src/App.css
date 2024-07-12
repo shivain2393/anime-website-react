@@ -228,9 +228,12 @@ button:disabled{
 
 .anime-card-content{
     padding: 1rem 0.7rem;
+    width: 100%;
     align-self: flex-end;
     font-weight: 300;
     text-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
 }
 
 
@@ -334,6 +337,35 @@ button:disabled{
 .details-right .desc{
     padding-top: 9rem;
     border: 1px solid black;
+}
+
+
+
+/* Add to WatchList button */
+
+.add-icon{
+    background-color: white;
+    display: inline-block;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    align-self: flex-end;
+}
+
+.add-icon svg{
+    fill: black;
+}
+
+.add-icon:hover {
+    background-color: black;
+    transition: 0.3s ease;
+}
+
+.add-icon:hover svg{
+    fill: white;
 }
 
 

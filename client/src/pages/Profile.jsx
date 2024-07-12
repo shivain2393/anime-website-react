@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import WatchList from '../components/WatchList';
 
 const Profile = () => {
 
@@ -20,9 +21,9 @@ const Profile = () => {
           <span>{currentUser.role}</span>
         </div>
       </div>
-
+      
       <div className="personal-anime-info">
-
+          <WatchList user={currentUser}/>
       </div>
     </div>
   )
