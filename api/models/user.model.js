@@ -37,7 +37,7 @@ const userSchema = mongoose.Schema({
 
     watchList: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Anime'
+        ref: 'anime'
     }]
 
 
