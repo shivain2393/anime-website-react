@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { signOutStart, signOutSuccess, signOutFailure } from '../redux/user/userSlice'
 import { useDispatch } from 'react-redux'
+import Search from './Search'
 
 const Header = () => {
 
@@ -43,9 +44,7 @@ const Header = () => {
         <li><Link>Mangas</Link></li>
       </ul>
 
-      <div>
-        <input className="search-box" type="text" placeholder='Search...' />
-      </div>
+     <Search />
 
       <div className='user-controls'>
         {currentUser ?
