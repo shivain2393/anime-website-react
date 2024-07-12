@@ -4,7 +4,6 @@ import AnimeCard from '../components/AnimeCard';
 const AllAnimes = () => {
   
     const [animes, setAnimes] = useState([]);
-    console.log(animes);
     const [error, setError] = useState(null)
 
     const getAllAnimes = async () => {
@@ -30,6 +29,7 @@ const AllAnimes = () => {
 
     return (
         <>  <h1 className='animes-page-h1'>Animes</h1>
+            {error && <p className='error'>{error}</p>}
             <div className='animes-container'>
                 {animes.map((anime) => (
                     <AnimeCard key={anime._id} anime={anime}/>

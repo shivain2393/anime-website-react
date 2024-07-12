@@ -13,13 +13,14 @@ const animeSchema = mongoose.Schema({
         required: true
     },
 
-    genre : {
+    genres : {
         type: [String],
         required: true
     },
 
     releaseDate: {
-        type: Date
+        type: Date,
+        required: true
     },
 
     coverImage: {

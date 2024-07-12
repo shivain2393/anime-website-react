@@ -8,6 +8,8 @@ import Footer from './components/Footer'
 import Profile from './pages/Profile'
 import AllAnimes from './pages/AllAnimes'
 import PrivateRoute from './components/PrivateRoute'
+import AdminRoute from './components/AdminRoute'
+import AddAnime from './pages/AddAnime'
 import './App.css'
 
 
@@ -22,6 +24,9 @@ const App = () => {
           <Route path='/animes' element={<AllAnimes />} />
           <Route element={<PrivateRoute />}>
             <Route path='/profile' element={<Profile />} />
+            <Route element={<AdminRoute />}>
+              <Route path='/add-anime' element={<AddAnime />} />
+            </Route>
           </Route>
         </Routes>
       <Footer />
