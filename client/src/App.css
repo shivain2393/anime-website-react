@@ -38,6 +38,7 @@ a{
 
 button:disabled{
     opacity: 0.4;
+    cursor: not-allowed;
 }
 
 /* Navbar */
@@ -62,16 +63,62 @@ button:disabled{
     display: flex;
     list-style-type: none;
     gap: 3rem;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+}
+
+.nav-links li a{
+    transition: all ease 0.3s;
+}
+
+.nav-links li:hover{
+    color: var(--accent-color);
+}
+
+.search-container{
+    max-width: 30%;
+    /* overflow: hidden; */
+    position: relative;
 }
 
 .search-box{
-    padding: 0.5rem;
-    font-size: 1.3rem;
-    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--input-border-color);
+    background-color: var(--container-color);
     border-radius: 0.5rem;
+    padding: 0.5rem;
+    gap: 0.5rem;
+    position: relative;
 }
 
+.search-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-box input{
+    background-color: inherit;
+    font-size: 1.3rem;
+    border: none;
+    color: var(--font-color);
+}
+
+.search-box input:focus{
+    outline: none;
+}
+
+.search-results{
+    position: absolute;
+    z-index: 10;
+}
+
+.search-results ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--container-color);
+}
 
 .user-controls{
     display: flex;
@@ -81,15 +128,67 @@ button:disabled{
 }
 
 .animated-btn{
-    padding: 0.5rem 1.2rem;
+    padding: 0.7rem 1.3rem;
     font-size: 1.3rem;
     cursor: pointer;
+    border-radius: 0.5rem;
+    background-color: var(--container-color);
+    font-weight: 500;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    border: none;
+    outline: none;
+    color: var(--font-color);
+    transition: 0.3s ease;
+}
+
+.animated-btn:hover{
+    color: black;
+}
+
+
+.animated-btn::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--accent-color);
+    bottom: -100%;
+    left: 0;
+    border-radius: 50%;
+    z-index: -1;
+    transition: all 0.3s ease-in-out;
+}
+
+.animated-btn:hover::before{
+    border-radius: 0;
+    bottom: 0;
 }
 
 .profile-picture{
     border-radius: 50%;
     object-fit: cover;
     object-position: center;
+}
+
+/* Anime Search Card */
+
+.search-card{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid var(--input-border-color);
+    padding: 0.5rem;
+    transition: all 0.4s ease;
+}
+
+.search-card:hover{
+    background-color: hsl(143, 57%, 30%);
+}
+
+.search-card img{
+    width: 20%;
 }
 
 /* Sign Up Page */
@@ -137,6 +236,7 @@ button:disabled{
     cursor: pointer;
     font-weight: 600;
     transition: ease 0.3s;
+    background-color: var(--font-color);
 }
 
 .submit-btn:hover{
