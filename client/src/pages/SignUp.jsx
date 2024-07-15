@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const SignUp = () => {
 
@@ -73,22 +73,27 @@ const SignUp = () => {
       <form className='sign-up-form' onSubmit={(e) => handleSubmit(e)}>
         <div className='fields'>
           <label htmlFor="username">Username</label>
-          <input onChange={(e) => handleChange(e)} minLength={4} maxLength={12} placeholder='enter your username' type="text" id='username' required/>
+          <input onChange={(e) => handleChange(e)} minLength={4} maxLength={12} placeholder='Enter your username' type="text" id='username' required/>
         </div>
         <div className='fields'>
           <label htmlFor="email">Email</label>
-          <input onChange={(e) => handleChange(e)} placeholder='enter your email' type="text" id='email' required/>
+          <input onChange={(e) => handleChange(e)} placeholder='Enter your email' type="text" id='email' required/>
         </div>
         <div className='fields'>
           <label htmlFor="password">Password</label>
-          <input onChange={(e) => handleChange(e)} minLength={8} maxLength={64} placeholder='enter your password' type="password" id='password' required/>
+          <input onChange={(e) => handleChange(e)} minLength={8} maxLength={64} placeholder='Enter your password' type="password" id='password' required/>
         </div>
         <div className='fields'>
-          <label htmlFor="confirmPassword">Confirm Password</label>
-          <input onChange={(e) => handleChange(e)} minLength={8} maxLength={64} placeholder='confirm your password' type="password" id="confirmPassword" required/>
+          <label htElFor="confirmPassword">Confirm Password</label>
+          <input onChange={(e) => handleChange(e)} minLength={8} maxLength={64} placeholder='Confirm your password' type="password" id="confirmPassword" required/>
         </div>
         {error && <p className='error'>{error}</p>}
         <button disabled={loading} className='submit-btn'>{loading ? 'Loading...' : 'Sign up'}</button>
+        <p className='sign-up-para'>Already have an account? 
+          <Link to={'/sign-in'}>
+            <span className='sign-up-text'>Sign in</span>
+          </Link>
+        </p>
       </form>
     </div>
   )

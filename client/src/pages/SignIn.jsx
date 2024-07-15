@@ -50,11 +50,11 @@ const SignIn = () => {
       <form onSubmit={(e) => handleSubmit(e)} className='sign-in-form'>
         <div className="fields">
           <label htmlFor="username">Username</label>
-          <input onChange={(e) => handleChange(e)} type="text" id="username" placeholder='enter your username' />
+          <input onChange={(e) => handleChange(e)} type="text" id="username" placeholder='Enter your username'  required/>
         </div>
         <div className="fields">
           <label htmlFor="password">Password</label>
-          <input onChange={(e) => handleChange(e)} type="password" id="password" placeholder='enter your password'/>
+          <input onChange={(e) => handleChange(e)} type="password" id="password" placeholder='Enter your password' required/>
         </div>
         {error &&  <span className="error">{error}</span>}
         <button disabled={loading} className='submit-btn'>{loading ? 'Loading...' : 'Sign in'}</button>

@@ -36,7 +36,7 @@ const Header = () => {
   return (
     <nav className='navbar'>
       <Link to={'/'}>
-        <h1>ZoroWatch</h1>
+        <h1><span>Zoro</span>Watch</h1>
       </Link>
       <ul className='nav-links'>
         <li><Link to={'/'}>Home</Link></li>
