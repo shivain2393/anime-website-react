@@ -400,8 +400,8 @@ button:disabled{
 /* Add Anime Page */
 
 .add-anime-container{
+    background-color: var(--container-color);
     width: 70%;
-    border: 1px solid black;
     margin: 1rem auto;
     display: flex;
     padding: 2rem;
@@ -423,6 +423,39 @@ button:disabled{
     flex: 1;
 }
 
+.fields #description{
+    color: var(--font-color);
+    font-size: inherit;
+    background-color: transparent;
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--input-border-color);
+}
+
+.fields #description:focus{
+    outline: none;
+}
+
+.fields #coverImage{
+    display: none;
+}
+
+.add-file-btn{
+    width: 30%;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    align-self: flex-start;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: ease 0.3s;
+    background-color: var(--font-color);
+}
+
+.add-file-btn:hover{
+    background-color: var(--accent-color);
+}
+
 .anime-genres, .anime-status{
     display: flex;
     gap: 1rem;
@@ -440,8 +473,8 @@ button:disabled{
 
 .add-anime-page-h1{
     text-align: center;
-    font-size: 3rem;
-    margin-top: 3rem;
+    font-size: 2.5rem;
+    margin-top: 2rem;
 }
 
 

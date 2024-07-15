@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import AnimeCard from '../components/AnimeCard'
 import { app } from '../firebase.js'
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage'
@@ -11,11 +11,14 @@ const AddAnime = () => {
     })
 
     const [file, setFile] = useState(undefined);
-    const [progress, setProgress] = useState(0);
+    const [progress, setProgress] = useState(null);
     const [fileError, setFileError] = useState(null);
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState(null);
     const [error, setError] = useState(null);
+    const [uploadingFile, setUploadingFile] = useState(false);
+
+    const uploadFileRef = useRef(null);
 
 
     useEffect(() => {
@@ -27,6 +30,7 @@ const AddAnime = () => {
 
 
     const handleFileUpload = (file) => {
+        setUploadingFile(true);
         const storage = getStorage(app);
         const fileName = new Date().getTime() + file.name;
         const storageRef = ref(storage, fileName);
@@ -48,6 +52,7 @@ const AddAnime = () => {
             }
         )
         setFile(undefined)
+        setUploadingFile(false);
     }
 
     const handleChange = (event) => {
@@ -177,7 +182,8 @@ const AddAnime = () => {
                 </div>
                 <div className="fields">
                     <label htmlFor="coverImage">Cover Image of the Anime</label>
-                    <input onChange={(e) => setFile(e.target.files[0])} accept='image/*' type="file" id='coverImage' />
+                    <input ref={uploadFileRef} onChange={(e) => setFile(e.target.files[0])} accept='image/*' type="file" id='coverImage' />
+                    <button disabled={uploadingFile} onClick={() => uploadFileRef.current.click()} type='button' className="add-file-btn">Choose file</button>
                     {progress && <p className='msg'>{progress === 100 ? 'File Uploaded Sucessfully' : `File is ${progress}% uploaded`}</p>}
                     {fileError && <p className='error'>{fileError}</p>}
                 </div>
