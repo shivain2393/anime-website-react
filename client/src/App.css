@@ -289,13 +289,49 @@ button:disabled{
     justify-content: space-between;
 }
 
+.pen-icon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    cursor: pointer;
+}
+
+.pen-icon svg{
+    stroke: var(--container-color);
+    transition: 0.3s ease;
+}
+
+.pen-icon:hover svg{
+    stroke: var(--font-color);
+}
+
+
 .profile-details{
     display: flex;
     align-items: center;
     gap: 3rem;
     font-size: 2.5rem;
     color: white;
-    border: 1px solid red;
+}
+
+.profile-icon-container{
+    position: relative;
+}
+
+.profile-pen{
+    position: absolute;
+    bottom: 10%;
+    left: 70%;
+    cursor: pointer;
+}
+
+.profile-pen svg{
+    stroke: var(--container-color);
+    transition: ease 0.3s;
+}
+
+.profile-pen:hover svg{
+    stroke: var(--font-color);
 }
 
 .profile-icon{
@@ -304,7 +340,6 @@ button:disabled{
 
 .edit-profile{
     display: flex;
-    border: 1px solid red;
     gap: 1rem;
 }
 
