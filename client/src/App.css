@@ -643,6 +643,14 @@ button:disabled{
 }
 
 
+/* Delete-Anime-Button */
+
+.delete-icon:hover svg{
+    fill: red;
+    stroke: black;
+}
+
+
 
 
 

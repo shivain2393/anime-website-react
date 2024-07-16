@@ -14,6 +14,23 @@ const addAnime = async (req, res, next) => {
     }
 }
 
+const deleteAnime = async (req, res, next) => {
+    try {
+        const { animeId } = req.body;
+        
+        const deletedAnime = await Anime.findByIdAndDelete(animeId);
+
+        if(!deletedAnime) throw new ApiError(404, "Anime not found");
+
+        const allAnimes = await Anime.find({});
+
+        return res.status(200).json(allAnimes);
+
+    } catch (error) {
+        next(error);
+    }
+}
+
 const showAllAnimes = async (req, res, next) => {
     
     try {
@@ -24,4 +41,4 @@ const showAllAnimes = async (req, res, next) => {
     }
 }
 
-export { addAnime, showAllAnimes }
+export { addAnime, deleteAnime, showAllAnimes  }

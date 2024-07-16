@@ -15,6 +15,7 @@ import AddAnime from './pages/AddAnime'
 import AnimeDetails from './pages/AnimeDetails'
 import './App.css'
 import About from './pages/About'
+import DeleteAnime from './pages/DeleteAnime'
 
 
 
@@ -63,6 +64,7 @@ const App = () => {
             <Route path='/profile' element={<Profile />} />
             <Route element={<AdminRoute />}>
               <Route path='/add-anime' element={<AddAnime />} />
+              <Route path='delete-anime' element={<DeleteAnime />} />
             </Route>
           </Route>
         </Routes>
