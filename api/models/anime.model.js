@@ -28,6 +28,11 @@ const animeSchema = mongoose.Schema({
         required: true
     },
 
+    backgroundImage: {
+        type: String,
+        required: true
+    },
+
     rating: {
         type: Number,
         min: 0,

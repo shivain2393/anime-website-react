@@ -53,7 +53,7 @@ const Header = () => {
           <Link to={'/profile'}>
             <img className='profile-picture' width={50} src={currentUser.avatar} alt="profilePic" />
           </Link>
-          <button onClick={handleClick} className='animated-btn' type='button'>Sign out</button>
+          <button onClick={handleClick} className='animated-btn cancel-btn' type='button'>Sign out</button>
         </>
         :
         <Link to={'/sign-in'}>

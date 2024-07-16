@@ -65,10 +65,14 @@ button:disabled{
 /* Navbar */
 
 .navbar{
+    position: sticky;
+    top: 0;
     display: flex;
     align-items: center;
     padding: 1rem 10rem 1rem 10rem;
     justify-content: space-between;
+    background-color: var(--bg-color);
+    z-index: 10;
 }
 
 .navbar h1{
@@ -211,6 +215,66 @@ button:disabled{
 .search-card img{
     width: 20%;
 }
+
+
+/* Home Page */
+.homepage-container{
+    width: 90%;
+    background-color: var(--container-color);
+    min-height: 100vh;
+    margin: 1rem auto;
+    border-radius: 1rem;
+}
+
+
+/* Carousel */
+
+.carousel{
+    border-radius: 1rem;
+    width: 100%;
+    height: 80vh;
+}
+
+.carousel svg{
+    fill: black;
+}
+
+.carousel-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+}
+
+.carousel-img-overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+}
+
+.swiper-pagination .swiper-pagination-bullet{
+    width: 20px;
+    height: 20px;
+}
+
+.swiper-pagination .swiper-pagination-bullet-active{
+    background-color: var(--accent-color);
+}
+
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: var(--accent-color);
+}
+
+.carousel-anime-details{
+
+}
+
 
 /* Sign Up Page */
 
