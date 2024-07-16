@@ -24,11 +24,28 @@ const animeSlice = createSlice({
         getAnimesFailure: (state, action) => {
             state.error = action.payload;
             state.status = 'failed';
+        },
+
+        updateAnimesStart: (state) => {
+            state.status = 'loading';
+        },
+
+        updateAnimesSuccess : (state, action) => {
+            state.animes = action.payload;
+            state.status = 'success';
+        },
+
+        updateAnimesFailure : (state, action) => {
+            state.error = action.payload;
+            state.status = 'failed';
         }
     } 
 })
 
 
-export const  { getAnimesStart, getAnimesSucess, getAnimesFailure } = animeSlice.actions;
+export const  { 
+    getAnimesStart, getAnimesSucess, getAnimesFailure,
+    updateAnimesStart, updateAnimesSuccess, updateAnimesFailure
+} = animeSlice.actions;
 
 export default animeSlice.reducer;

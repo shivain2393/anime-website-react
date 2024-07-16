@@ -28,7 +28,7 @@ a{
 }
 
 .error{
-    color: red;
+    color: var(--error-color);
     align-self: center;
 }
 

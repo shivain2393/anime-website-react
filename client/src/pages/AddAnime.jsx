@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react'
 import AnimeCard from '../components/AnimeCard'
 import { app } from '../firebase.js'
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage'
+import { updateAnimesStart, updateAnimesSuccess, updateAnimesFailure } from '../redux/animes/animeSlice.js'
+import { useDispatch } from 'react-redux'
 
 
 const AddAnime = () => {
@@ -19,6 +21,7 @@ const AddAnime = () => {
     const [uploadingFile, setUploadingFile] = useState(false);
 
     const uploadFileRef = useRef(null);
+    const dispatch = useDispatch();
 
 
     useEffect(() => {
@@ -112,6 +115,9 @@ const AddAnime = () => {
         event.preventDefault();
 
         try {
+
+            dispatch(updateAnimesStart());
+
             setLoading(true);
 
             const res = await fetch('/api/anime/addanime', {
@@ -126,14 +132,17 @@ const AddAnime = () => {
             if(data.success === false){
                 setLoading(false);
                 setMessage(data.message);
+                dispatch(updateAnimesFailure(data.message));
                 return;
             }
             setLoading(false);
-            setMessage(data);
+            setMessage("Anime added Successfully");
+            dispatch(updateAnimesSuccess(data));
 
         } catch (error) {
             setLoading(false);
             setMessage(error.message);
+            dispatch(updateAnimesFailure(error.message))
         }
 
     }
