@@ -11,7 +11,7 @@ const AllAnimes = () => {
             {error && <p className='error'>{error}</p>}
             <div className='animes-container'>
                 {animes.map((anime) => (
-                    <AnimeCard key={anime._id} anime={anime}/>
+                    <AnimeCard key={anime._id} anime={anime} disableLink={false}/>
                 ))}
             </div>
         </>

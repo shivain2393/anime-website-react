@@ -14,6 +14,7 @@ import AdminRoute from './components/AdminRoute'
 import AddAnime from './pages/AddAnime'
 import AnimeDetails from './pages/AnimeDetails'
 import './App.css'
+import About from './pages/About'
 
 
 
@@ -53,6 +54,7 @@ const App = () => {
       <Header />
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/about' element={<About />} />
           <Route path='sign-in' element={<SignIn />} />
           <Route path='sign-up' element={<SignUp />} />
           <Route path='/animes' element={<AllAnimes />} />

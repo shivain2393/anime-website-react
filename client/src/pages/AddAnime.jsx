@@ -209,7 +209,7 @@ const AddAnime = () => {
                 {error && <p className='error'>{error}</p>}
             </form>
             <div className="right-side">
-                <AnimeCard anime={formData}/>
+                <AnimeCard anime={formData} disableLink={true}/>
             </div>
         </div>
         </>
