@@ -138,7 +138,7 @@ const Profile = () => {
             <input style={{display: 'none'}}  ref={avatarImageRef} onChange={(e) => setAvatarImage(e.target.files[0])} accept='image/*' type="file" name="" id="avatar" />
             <input style={{display: 'none'}} ref={backgroundImageRef} onChange={(e) => setBackgroundImage(e.target.files[0])} accept='image/*' type="file" name="" id="backgroundImage" />
             <button disabled={disableSave} onClick={handleSubmit} className='animated-btn' >{loading ? 'Loading...' : 'Save'}</button>
-            <button disabled={loading} onClick={handleEditMode} type='button' className='animated-btn' >Cancel</button> 
+            <button disabled={loading} onClick={handleEditMode} type='button' className='animated-btn cancel-btn' >Cancel</button> 
           </>
           }
         </div>

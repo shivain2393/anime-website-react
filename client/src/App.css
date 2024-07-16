@@ -14,6 +14,7 @@
     --accent-color: #5ed38b;
     --font-color: #d6d5d5;
     --input-border-color: #474646;
+    --error-color: #bd0808;
 }
 
 body{
@@ -289,11 +290,23 @@ button:disabled{
     justify-content: space-between;
 }
 
+.profile-info::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    top: 0;
+    left: 0;
+    opacity: 0.3;
+}
+
 .pen-icon{
     position: absolute;
     top: 50%;
     left: 50%;
     cursor: pointer;
+    z-index: 2;
 }
 
 .pen-icon svg{
@@ -312,6 +325,7 @@ button:disabled{
     gap: 3rem;
     font-size: 2.5rem;
     color: white;
+    z-index: 2;
 }
 
 .profile-icon-container{
@@ -341,6 +355,11 @@ button:disabled{
 .edit-profile{
     display: flex;
     gap: 1rem;
+    z-index: 2;
+}
+
+.cancel-btn::before{
+    background-color: var(--error-color);
 }
 
 /* WatchList section on profile page */
@@ -359,15 +378,16 @@ button:disabled{
 .watch-list-animes-container{
     width: 100%;
     margin: 3rem auto;
-    display: flex;
-    border: 2px solid black;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(250px, 1fr));
+    grid-row-gap: 2.5rem;
+    justify-items: center;
     overflow: hidden;
     min-height: 100vh;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
     padding: 1rem;
     border-radius: 1rem;
-    gap: 0.8rem;
+    background-color: var(--container-color);
 }
 
 /* All Animes Page */
@@ -381,23 +401,19 @@ button:disabled{
 .animes-container{
     width: 90%;
     margin: 3rem auto;
-    display: flex;
-    border: 2px solid black;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(250px, 1fr));
+    grid-row-gap: 2.5rem;
+    justify-items: center;
     overflow: hidden;
     min-height: 100vh;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
     padding: 1rem;
     border-radius: 1rem;
-    gap: 0.8rem;
+    background-color: var(--container-color);
 }
 
-
-
-
 /* Anime Card */
-
-
 
 .anime-card{
     width: 200px;
@@ -409,6 +425,7 @@ button:disabled{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     display: flex;
     cursor: pointer;
+    z-index: 1;
 }
 
 .anime-card img{
