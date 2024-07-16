@@ -43,6 +43,25 @@ button:disabled{
     pointer-events: none;
 }
 
+
+/* Password Eye Button */
+
+.password{
+    position: relative;
+}
+
+.eye-icon{
+    position: absolute;
+    right: 10px;
+    top: 16px;
+    cursor: pointer;
+}
+
+#password, #confirmPassword{
+    width: 100%;
+}
+
+
 /* Navbar */
 
 .navbar{
