@@ -39,6 +39,7 @@ a{
 button:disabled{
     opacity: 0.4;
     cursor: not-allowed;
+    pointer-events: none;
 }
 
 /* Navbar */
@@ -276,14 +277,16 @@ button:disabled{
     width: 90%;
     margin: 3rem auto;
     border-radius: 1rem;
-    overflow: hidden;
+    overflow: hidden; 
 }
 
 .profile-info{
     display: flex;
     height: 50vh;
     align-items: flex-end;
-    padding: 5rem;
+    padding: 5rem 3rem 5rem 5rem;
+    position: relative;
+    justify-content: space-between;
 }
 
 .profile-details{
@@ -292,10 +295,17 @@ button:disabled{
     gap: 3rem;
     font-size: 2.5rem;
     color: white;
+    border: 1px solid red;
 }
 
 .profile-icon{
     border-radius: 50%;
+}
+
+.edit-profile{
+    display: flex;
+    border: 1px solid red;
+    gap: 1rem;
 }
 
 /* WatchList section on profile page */

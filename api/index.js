@@ -6,6 +6,7 @@ import errorMiddleware from './middlewares/error.middleware.js';
 import authRouter from './routes/auth.route.js'
 import animeRouter from './routes/anime.route.js'
 import watchListRouter from './routes/watchlist.route.js'
+import userRouter from './routes/user.route.js'
 
 
 dotenv.config();
@@ -36,6 +37,7 @@ app.use(cookieParser())
 app.use('/api/auth', authRouter);
 app.use('/api/anime', animeRouter);
 app.use('/api/watchlist', watchListRouter);
+app.use('/api/user', userRouter);
 
 
 app.use(errorMiddleware);
