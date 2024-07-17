@@ -17,6 +17,7 @@ import './App.css'
 import About from './pages/About'
 import DeleteAnime from './pages/DeleteAnime'
 import ScrollToTop from './components/ScrollToTop'
+import Admin from './pages/Admin'
 
 
 
@@ -65,8 +66,9 @@ const App = () => {
           <Route element={<PrivateRoute />}>
             <Route path='/profile' element={<Profile />} />
             <Route element={<AdminRoute />}>
-              <Route path='/add-anime' element={<AddAnime />} />
-              <Route path='delete-anime' element={<DeleteAnime />} />
+              <Route path='/admin' element={<Admin />} />
+              <Route path='/admin/add-anime' element={<AddAnime />} />
+              <Route path='/admin/delete-anime' element={<DeleteAnime />} />
             </Route>
           </Route>
         </Routes>

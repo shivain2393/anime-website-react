@@ -99,6 +99,18 @@ button:disabled{
     color: var(--accent-color);
 }
 
+.admin-link{
+    font-size: 1.5rem;
+}
+
+.admin-link a{
+    transition: all ease 0.3s;
+}
+
+.admin-link:hover a{
+    color: var(--accent-color);
+}
+
 .search-container{
     max-width: 30%;
     /* overflow: hidden; */
@@ -513,7 +525,6 @@ button:disabled{
     grid-row-gap: 2.5rem;
     justify-items: center;
     overflow: hidden;
-    min-height: 100vh;
     padding: 2rem 1rem;
     border-radius: 1rem;
     background-color: var(--container-color);
@@ -736,7 +747,111 @@ button:disabled{
     stroke: black;
 }
 
+/* Admin-Page */
 
+.admin-page{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2.5rem auto;
+}
+
+.admin-page h1{
+    font-size: 2.5rem;
+}
+
+.admin-controls-container{                  
+    margin: 1rem;
+    padding: 2rem 1rem;
+    background-color: var(--container-color);
+    border-radius: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.admin-controls-container h2{
+    font-size: 2rem;
+}
+
+.admin-controls-container h2 span{
+    color: var(--accent-color);
+}
+
+.admin-control-buttons{
+    display: flex;
+    gap: 1.5rem;
+}
+
+.admin-btn{
+    background-color: var(--bg-color);
+}
+
+.search-username-container{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.admin-search-btn{
+    font-size: 1.1rem;
+    padding: 0.7rem 1.2rem;
+    cursor: pointer;
+    background-color: var(--font-color);
+    border: none;
+    border-radius: 0.5rem;
+    transition: 0.3s ease;
+    font-weight: 600;
+}
+
+.admin-search-btn:hover{
+    background-color: var(--accent-color);
+}
+
+.role-checkboxes{
+    display: flex;
+    gap: 0.8rem;
+}
+
+.role-checkboxes input[type='checkbox']{
+    width: 20px;
+    cursor: pointer;
+}
+
+.user-roles{
+    display: flex;
+    gap: 1rem;
+}
+
+.get-user-details-form{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.show-user-details-form{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.show-user-details-form .fields{
+    width: 80%;
+}
+.show-user-details-form .role{
+    width: 80%;
+    align-items: center;
+}
+
+.show-user-details-form input{
+    width: 100%;
+}
 
 
 

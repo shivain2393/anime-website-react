@@ -49,7 +49,7 @@ const Header = () => {
       <div className='user-controls'>
         {currentUser ?
         <>
-          <span><Link>Watchlist</Link></span>
+          {currentUser.role === 'admin' && <div className='admin-link'><Link to={'/admin'}>Admin</Link></div>}
           <Link to={'/profile'}>
             <img className='profile-picture' width={50} src={currentUser.avatar} alt="profilePic" />
           </Link>
