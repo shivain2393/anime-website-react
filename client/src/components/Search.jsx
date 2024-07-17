@@ -21,7 +21,7 @@ const Search = () => {
     }
     else{
       const filtered = animes.filter(anime => anime.title.toLowerCase().includes(query));
-      setFilteredAnimes(filtered);
+      setFilteredAnimes(filtered.slice(0, 5));
       setIsResultsVisible(true);
     }
   }
