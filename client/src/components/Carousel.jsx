@@ -23,12 +23,10 @@ export default ({ popularAnimes }) => {
         easing: 'ease',
         speed: 3000,
       }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}
     >
         {popularAnimes.map((anime, index) => (
-            <SwiperSlide>
-                <Link to={`/animes/${anime._id}`} state={{ anime }} key={index}>
+            <SwiperSlide key={index}>
+                <Link to={`/animes/${anime._id}`} state={{ anime }}>
                     <img src={anime.backgroundImage} alt="anime-image" className="carousel-img" />
                     <div className="carousel-img-overlay"></div>
                 </Link>
