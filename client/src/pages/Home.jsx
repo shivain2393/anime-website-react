@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Carousel from '../components/Carousel.jsx'
 import CardSwiper from '../components/CardSwiper.jsx';
+import AnimeCard from '../components/AnimeCard.jsx';
 
 const Home = () => {
 
@@ -31,12 +33,26 @@ const Home = () => {
   }
 
 
+
   return (
     <div className='homepage-container'>
       <Carousel popularAnimes={popularAnimes}/>
       <h1>Recently Added Animes</h1>
       <div className='recent-animes-container'>
         <CardSwiper className='card-swiper' recentAnimes={recentAnimes} />
+      </div>
+      <div className="browse-animes-text">
+        <h1>Browse Animes</h1>
+        <button className='animated-btn' type="button">
+          <Link to={'/animes'}>
+            See more
+          </Link>
+        </button>
+      </div>
+      <div className="browse-animes-container">
+        {animes.slice(0, 12).map((anime, index) => (
+          <AnimeCard key={index} anime={anime}/>
+        ))}
       </div>
     </div>
   )

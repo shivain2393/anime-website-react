@@ -6,7 +6,7 @@ const addAnime = async (req, res, next) => {
 
         const newAnime = await new Anime(req.body);
         const savedAnime = await newAnime.save();
-        const allAnimes = await Anime.find({})
+        const allAnimes = await Anime.find({}).sort({ title: 1 });
         return res.status(200).json(allAnimes);
         
     } catch (error) {
@@ -22,7 +22,7 @@ const deleteAnime = async (req, res, next) => {
 
         if(!deletedAnime) throw new ApiError(404, "Anime not found");
 
-        const allAnimes = await Anime.find({});
+        const allAnimes = await Anime.find({}).sort({ title: 1 });
 
         return res.status(200).json(allAnimes);
 
@@ -34,7 +34,7 @@ const deleteAnime = async (req, res, next) => {
 const showAllAnimes = async (req, res, next) => {
     
     try {
-        const allAnimes = await Anime.find({});
+        const allAnimes = await Anime.find({}).sort({ title: 1 });
         return res.status(200).json(allAnimes)
     } catch (error) {
         next(error)

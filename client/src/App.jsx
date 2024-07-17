@@ -16,6 +16,7 @@ import AnimeDetails from './pages/AnimeDetails'
 import './App.css'
 import About from './pages/About'
 import DeleteAnime from './pages/DeleteAnime'
+import ScrollToTop from './components/ScrollToTop'
 
 
 
@@ -52,6 +53,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Header />
         <Routes>
           <Route path='/' element={<Home />} />

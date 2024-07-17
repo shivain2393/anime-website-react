@@ -14,7 +14,7 @@
     --accent-color: #5ed38b;
     --font-color: #d6d5d5;
     --input-border-color: #474646;
-    --error-color: #bd0808;
+    --error-color: #c73131;
 }
 
 body{
@@ -234,6 +234,25 @@ button:disabled{
     background-color: var(--container-color);
     padding: 2rem 1rem;
     border-radius: 1rem;
+}
+
+.browse-animes-text{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.browse-animes-container{
+    width: 100%;
+    background-color: var(--container-color);
+    padding: 2rem 1rem;
+    border-radius: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(250px, 1fr));
+    grid-row-gap: 2.5rem;
+    justify-items: center;
 }
 
 
@@ -472,7 +491,6 @@ button:disabled{
     grid-row-gap: 2.5rem;
     justify-items: center;
     overflow: hidden;
-    min-height: 100vh;
     padding: 2rem 1rem; 
     border-radius: 1rem;
     background-color: var(--container-color);
@@ -703,15 +721,14 @@ button:disabled{
 }
 
 .add-icon:hover {
-    background-color: black;
+    background-color: var(--accent-color);
     transition: 0.3s ease;
 }
 
-.add-icon:hover svg{
-    fill: white;
+.remove-icon:hover{
+    background-color: var(--error-color);
+    transition: 0.3s ease;
 }
-
-
 /* Delete-Anime-Button */
 
 .delete-icon:hover svg{
