@@ -54,25 +54,29 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <ScrollToTop />
-      <Header />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='sign-in' element={<SignIn />} />
-          <Route path='sign-up' element={<SignUp />} />
-          <Route path='/animes' element={<AllAnimes />} />
-          <Route path='/animes/:id' element={<AnimeDetails />} />
-          <Route element={<PrivateRoute />}>
-            <Route path='/profile' element={<Profile />} />
-            <Route element={<AdminRoute />}>
-              <Route path='/admin' element={<Admin />} />
-              <Route path='/admin/add-anime' element={<AddAnime />} />
-              <Route path='/admin/delete-anime' element={<DeleteAnime />} />
-            </Route>
-          </Route>
-        </Routes>
-      <Footer />
+    <div className="page-container">
+        <ScrollToTop />
+        <Header />
+        <div className="content-wrap">
+          <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/about' element={<About />} />
+              <Route path='sign-in' element={<SignIn />} />
+              <Route path='sign-up' element={<SignUp />} />
+              <Route path='/animes' element={<AllAnimes />} />
+              <Route path='/animes/:id' element={<AnimeDetails />} />
+              <Route element={<PrivateRoute />}>
+                <Route path='/profile' element={<Profile />} />
+                <Route element={<AdminRoute />}>
+                  <Route path='/admin' element={<Admin />} />
+                  <Route path='/admin/add-anime' element={<AddAnime />} />
+                  <Route path='/admin/delete-anime' element={<DeleteAnime />} />
+                </Route>
+              </Route>
+            </Routes>
+          </div>
+        <Footer />
+      </div>
     </BrowserRouter>
   )
 }
