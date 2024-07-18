@@ -21,7 +21,7 @@ const Profile = () => {
 
   useEffect(() => {
     setFormData(currentUser)
-  }, [])
+  }, [currentUser])
 
   useEffect(() => {
       if(avatarImage){
@@ -111,8 +111,10 @@ const Profile = () => {
               </svg>
             </div>}
           </div>
-          <span>{currentUser.username}</span>
-          <span>{currentUser.role}</span>
+          <div className="profile-details-text">
+            <h3>{currentUser.username}</h3>
+            <span>(<span className={`role-text + ${currentUser.role === 'admin' ? ' admin-role' : ''}`}>{currentUser.role}</span>)</span>
+          </div>
         </div>
         {editMode && <div onClick={() => backgroundImageRef.current.click()} className='pen-icon'>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" width={60}>

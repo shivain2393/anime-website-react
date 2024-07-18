@@ -10,10 +10,12 @@ const Home = () => {
   const { animes } = useSelector(state => state.anime);
   const [popularAnimes, setPopularAnimes] = useState([]);
   const [recentAnimes, setRecentAnimes] = useState([]);
+  const [actionAnimes, setActionAnimes] = useState([]);
   
   useEffect(() => {
     getPopularAnimes();
     getRecentlyAddedAnimes();
+    getActionAnimes();
   }, [animes])
 
   const getPopularAnimes = () => {
@@ -30,6 +32,12 @@ const Home = () => {
 
     const tenAnimes = sortedAnimes.slice(0, 10);
     setRecentAnimes(tenAnimes);
+  }
+
+  const getActionAnimes = () => {
+    const sorted = [...animes].sort((a,b) => b.rating  - a.rating);
+    const action = sorted.filter(anime => anime.genres.includes('Action'));
+    setActionAnimes(action.slice(0, 10))
   }
 
 
@@ -53,6 +61,10 @@ const Home = () => {
         {animes.slice(0, 12).map((anime, index) => (
           <AnimeCard key={index} anime={anime}/>
         ))}
+      </div>
+      <h1>Featured Action Animes</h1>
+      <div className='action-animes-container'>
+      <CardSwiper className='card-swiper' recentAnimes={actionAnimes} />
       </div>
     </div>
   )

@@ -29,6 +29,9 @@ export default ({ popularAnimes }) => {
                 <Link to={`/animes/${anime._id}`} state={{ anime }}>
                     <img src={anime.backgroundImage} alt="anime-image" className="carousel-img" />
                     <div className="carousel-img-overlay"></div>
+                    <div className="carousel-img-title">
+                      <h1>{anime.title}</h1>
+                    </div>
                 </Link>
             </SwiperSlide>
         ))}
