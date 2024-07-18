@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { signOutStart, signOutSuccess, signOutFailure } from '../redux/user/userSlice'
 import { useDispatch } from 'react-redux'
@@ -9,8 +9,10 @@ const Header = () => {
 
   const { currentUser } = useSelector(state => state.user);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const handleClick = async () => {
+
+  const handleSignOut = async () => {
     
     try {
 
@@ -26,7 +28,7 @@ const Header = () => {
       }
 
       dispatch(signOutSuccess(data));
-
+      navigate('/sign-in');
       
     } catch (error) {
       dispatch(signOutFailure(error.message));
@@ -53,7 +55,7 @@ const Header = () => {
           <Link to={'/profile'}>
             <img className='profile-picture' width={50} height={50} src={currentUser.avatar} alt="profilePic" />
           </Link>
-          <button onClick={handleClick} className='animated-btn cancel-btn' type='button'>Sign out</button>
+          <button onClick={handleSignOut} className='animated-btn cancel-btn' type='button'>Sign out</button>
         </>
         :
         <Link to={'/sign-in'}>
