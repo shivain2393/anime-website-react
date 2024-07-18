@@ -645,6 +645,10 @@ button:disabled{
     display: none;
 }
 
+.fields #backgroundImage{
+    display: none;
+}
+
 .add-file-btn{
     width: 30%;
     font-size: 1.2rem;
@@ -661,8 +665,17 @@ button:disabled{
     background-color: var(--accent-color);
 }
 
-.anime-genres, .anime-status{
+.anime-genres{
+    display: grid;
+    padding: 0 0.5rem;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.anime-status{
     display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
 }
 
