@@ -475,6 +475,14 @@ button:disabled{
 
 .profile-icon-container{
     position: relative;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.profile-icon{
+    object-fit: cover;
+    object-position: center;
 }
 
 .profile-pen{

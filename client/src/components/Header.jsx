@@ -51,7 +51,7 @@ const Header = () => {
         <>
           {currentUser.role === 'admin' && <div className='admin-link'><Link to={'/admin'}>Admin</Link></div>}
           <Link to={'/profile'}>
-            <img className='profile-picture' width={50} src={currentUser.avatar} alt="profilePic" />
+            <img className='profile-picture' width={50} height={50} src={currentUser.avatar} alt="profilePic" />
           </Link>
           <button onClick={handleClick} className='animated-btn cancel-btn' type='button'>Sign out</button>
         </>
