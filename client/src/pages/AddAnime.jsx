@@ -13,7 +13,6 @@ const AddAnime = () => {
         rating: '',
         genres: [],
     })
-    console.log(formData)
 
     const [coverImageFile, setCoverImageFile] = useState(undefined);
     const [backgroundImageFile, setBackgroundImageFile] = useState(undefined);

@@ -6,7 +6,11 @@ const Admin = () => {
 
     const { currentUser } = useSelector(state => state.user);
     const [username, setUsername] = useState('');
-    const [userDetails, setUserDetails] = useState({})
+    const [userDetails, setUserDetails] = useState({
+        username: '',
+        email: '',
+        role: '',
+    })
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
     const [message, setMessage] = useState('');
@@ -122,7 +126,7 @@ const Admin = () => {
                     </div>
                     <div className="fields">
                         <label htmlFor="email">E-mail</label>
-                        <input type='text' value={userDetails.email} id="email"  readOnlyy/>
+                        <input type='text' value={userDetails.email} id="email"  readOnly/>
                     </div>
                     <div className="fields role">
                         <div className="user-roles">
