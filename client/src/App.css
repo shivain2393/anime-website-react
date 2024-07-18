@@ -358,6 +358,46 @@ button:disabled{
   color: var(--accent-color);
 }
 
+
+/* About Page */ 
+
+.about-page{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin: 1.5rem auto;
+    gap: 1rem;
+    align-items: center;
+}
+
+.about-page h1{
+    font-size: 3rem;
+}
+
+.about-page-container{
+    background-color: var(--container-color);
+    width: 100%;
+    border-radius: 1rem;
+    padding: 1.5rem 3rem 2rem 3rem; 
+    height: 55vh;
+    font-size: 1.2rem;
+}
+
+.about-page-container p{
+    line-height: 2;
+    word-spacing: 0.2rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    margin-bottom: 1rem;
+}
+
+
+
+.highlights{
+    font-weight: 500;
+    color: var(--accent-color);
+}
+
 /* Sign Up Page */
 
 .sign-up-box{
@@ -944,6 +984,5 @@ button:disabled{
 .show-user-details-form input{
     width: 100%;
 }
-
 
 

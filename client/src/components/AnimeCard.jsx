@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import RemoveFromWatchList from './RemoveFromWatchList';
 import { updateAnimesStart, updateAnimesSuccess, updateAnimesFailure } from '../redux/animes/animeSlice.js'
 
-const AnimeCard = ({ anime, disableLink, isDeleteAnimePage = false }) => {
+const AnimeCard = ({ anime, disableLink = false, isDeleteAnimePage = false }) => {
 
     
     const { currentUser } = useSelector(state => state.user);
