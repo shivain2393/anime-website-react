@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const About = () => {
+
+  useEffect(() => {
+    document.title = `ZoroWatch - About `;
+  }, []);
+
+
   return (
     <div className='about-page'>
       <h1>About</h1>

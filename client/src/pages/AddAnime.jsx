@@ -28,6 +28,10 @@ const AddAnime = () => {
     const uploadFileRefBackgroudImg  = useRef(null);
     const dispatch = useDispatch();
 
+    useEffect(() => {
+        document.title = `ZoroWatch - Add Anime `;
+      }, []);
+
 
     useEffect(() => {
         if(coverImageFile){

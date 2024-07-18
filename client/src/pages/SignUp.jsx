@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom';
 
 const SignUp = () => {
@@ -11,7 +11,10 @@ const SignUp = () => {
 
   const navigate = useNavigate()
 
-  console.log(formData);
+  useEffect(() => {
+    document.title = `ZoroWatch - Sign Up`;
+  }, []);
+
 
 
   const handleChange = (event) => {

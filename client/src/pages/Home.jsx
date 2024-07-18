@@ -11,6 +11,13 @@ const Home = () => {
   const [popularAnimes, setPopularAnimes] = useState([]);
   const [recentAnimes, setRecentAnimes] = useState([]);
   const [actionAnimes, setActionAnimes] = useState([]);
+
+
+  useEffect(() => {
+    document.title = `ZoroWatch - Anime Website`;
+  }, []);
+
+
   
   useEffect(() => {
     getPopularAnimes();

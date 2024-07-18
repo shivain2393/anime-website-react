@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { signInStart, signInFailure, signInSuccess } from '../redux/user/userSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
@@ -10,6 +10,11 @@ const SignIn = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+
+  useEffect(() => {
+    document.title = `ZoroWatch - Sign In`;
+  }, []);
 
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.id]: event.target.value });

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom'
 
@@ -9,7 +9,12 @@ const Admin = () => {
     const [userDetails, setUserDetails] = useState({})
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(false);
-    const [message, setMessage] = useState(''); 
+    const [message, setMessage] = useState('');
+    
+    
+    useEffect(() => {
+        document.title = 'ZoroWatch - Admin';
+      }, [])
 
     const handleChange = (event) => {;
         setUsername(event.target.value);

@@ -20,6 +20,10 @@ const Profile = () => {
   const backgroundImageRef = useRef(null);
 
   useEffect(() => {
+    document.title = 'ZoroWatch - Profile';
+  }, [])
+
+  useEffect(() => {
     setFormData(currentUser)
   }, [currentUser])
 

@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
 const AnimeDetails = () => {
 
     const location = useLocation();
     const { anime } = location.state;
+
+    useEffect(() => {
+        document.title = `ZoroWatch - ${anime.title} `;
+      }, []);
 
     const formattedDate = new Date(anime.releaseDate).toLocaleDateString('en-US', {
         year: 'numeric',
