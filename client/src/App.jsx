@@ -18,6 +18,7 @@ import About from './pages/About'
 import DeleteAnime from './pages/DeleteAnime'
 import ScrollToTop from './components/ScrollToTop'
 import Admin from './pages/Admin'
+import RedirectToHome from './components/RedirectToHome'
 
 
 
@@ -73,6 +74,7 @@ const App = () => {
                   <Route path='/admin/delete-anime' element={<DeleteAnime />} />
                 </Route>
               </Route>
+              <Route path='*' element={<RedirectToHome />} />
             </Routes>
           </div>
         <Footer />
