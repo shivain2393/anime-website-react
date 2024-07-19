@@ -23,7 +23,7 @@ const About = () => {
         </p>
           
         <p>
-          Please note that this project is a <span className="highlights">work in progress</span>, with ongoing improvements and updates planned. All images used belong to their respective copyright owners.
+          Please note that this project is a <span className="highlights">work in progress</span>, with ongoing improvements and updates planned. All images and content used belong to their respective copyright owners.
         </p>
       </div>
     </div>

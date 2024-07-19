@@ -45,6 +45,7 @@ a{
 .error{
     color: var(--error-color);
     align-self: center;
+    text-align: center;
 }
 
 .msg{
@@ -234,10 +235,99 @@ button:disabled{
 
 .profile-picture{
     border-radius: 50%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
 }
 
+/* Footer */
+
+.footer {
+    background-color: var(--container-color);
+    color: var(--font-color);
+    margin-top: 2rem;
+    text-align: center;
+  }
+  
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: auto;
+}
+  
+.footer-section {
+    flex: 1;
+    margin: 20px;
+    min-width: 200px;
+}
+  
+.footer-section h2 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: var(--accent-color);
+}
+  
+.footer-section p,
+.footer-section ul {
+    font-size: 1em;
+    line-height: 1.5;
+}
+  
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+  
+.footer-section ul li {
+    margin-bottom: 1rem;
+}
+
+.footer-section ul li a{
+    transition: 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: var(--accent-color);
+}
+
+.contact ul{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 1rem;
+}
+  
+.github-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.github-link:hover{
+    color: var(--accent-color);
+}
+
+.github-link:hover img{
+    filter: invert(50%) sepia(100%) saturate(500%) hue-rotate(100deg) brightness(90%) contrast(70%);
+}
+
+.github-link a{
+    transition: ease 0.3s;
+}
+
+.github-link img{
+    width: 25px;
+    height: 25px;
+    transition: ease 0.3s;
+}
+
+.footer-bottom {
+    font-size: 0.875em;
+    margin-bottom: 0.5rem;
+}
+    
 /* Anime Search Card */
 
 .search-card{
@@ -250,7 +340,7 @@ button:disabled{
 }
 
 .search-card:hover{
-    background-color: hsl(143, 57%, 30%);
+    background-color: #217842;
 }
 
 .search-card img{
@@ -979,6 +1069,7 @@ button:disabled{
 .show-user-details-form .fields{
     width: 80%;
 }
+
 .show-user-details-form .role{
     width: 80%;
     align-items: center;
@@ -987,5 +1078,3 @@ button:disabled{
 .show-user-details-form input{
     width: 100%;
 }
-
-

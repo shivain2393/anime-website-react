@@ -5,8 +5,13 @@ const addAnime = async (req, res, next) => {
     try {
 
         const newAnime = await new Anime(req.body);
+
+        if(!newAnime) throw new ApiError(401, "Please Enter all fields")
+
         const savedAnime = await newAnime.save();
+
         const allAnimes = await Anime.find({}).sort({ title: 1 });
+
         return res.status(200).json(allAnimes);
         
     } catch (error) {
