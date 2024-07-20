@@ -885,57 +885,112 @@ button:disabled{
 /* Anime Details Page */
 
 .anime-details-container{
+    background-color: var(--container-color);
     width: 90%;
     margin: 3rem auto;
-    border: 2px solid black;
+    border-radius: 1rem;
+    overflow: hidden;
+    min-height: 100vh;
 }
 
 .bg-img{
-    height: 35vh;
-    border: 1px solid red;
+    width: 100%;
+    overflow: hidden;
+    height: 60vh;
+    position: relative;
+}
+
+.bg-img img{
+    width: 100%;
+    height: 100%;
+    object-position: top;
+    object-fit: cover;
+}
+
+.anime-bg-overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    top: 0;
+    left: 0;
+    opacity: 0.4;
 }
 
 .anime-details{
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+    align-items: start;
     position: relative;
 }
 
 .details{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    width: 50%;
-    border: 2px solid green;
+    width: 60%;
+    display: flex;
+    font-size: 1.1rem;
+}
+
+.details h1{
+    font-size: 2.5rem;
+}
+
+.details h2{
+    font-size: 2rem;
 }
 
 .details-left{
-    border: 1px solid pink;
-    width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 1rem 0 1rem 1rem;
+    gap: 1rem;
+    flex: 1;
+}
+
+.details-left-info{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.details-left-info .headings{
+    font-weight: 500;
+    color: var(--accent-color);
+}
+
+.anime-details-left{
+    display: flex;
+    gap: 0.5rem;
+    text-transform: capitalize;
+}
+
+.anime-details-left .info{
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: 0.5rem;
 }
 
 .details-left img{
-    width: 90%;
+    width: 200px;
     border-radius: 1rem;
-    position: relative;
-    top: -15%;
 }
 
 .details-right{
-    border: 1px solid yellow;
-    grid-column: span 2;
-    height: 100%;
+    width: 80%;
+    margin-top: 5rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    padding-top: 2rem;
+    gap: 5rem;
+    flex: 3;
 }
 
-.details-right .desc{
-    padding-top: 9rem;
-    border: 1px solid black;
+.desc{
+    padding-top: 6rem;
+    line-height: 1.6;
 }
 
+.add-to-watchlist{
+    background-color: var(--bg-color);
+}
 
 
 /* Add to WatchList button */
