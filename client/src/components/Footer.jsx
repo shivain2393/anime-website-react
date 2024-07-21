@@ -27,7 +27,7 @@ const Footer = () => {
           <h2>Follow Us</h2>
           <div className="github-link">
             <a className='github-logo' target='_blank' href="https://github.com/shivain2393">
-              <img src='../public/github-white.png' alt="" />
+              <img src='../github-white.png' alt="" />
             </a>
             <a target='_blank' href="https://github.com/shivain2393">Github</a>
           </div>
